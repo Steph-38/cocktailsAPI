@@ -1,0 +1,106 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td,
+th, tr {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+/* CAROUSEL ANIMATION*/
+/* IMAGES */
+@keyframes AutoSlide {
+	0%, 15% {
+		left: 0px; /*1ère image*/
+	}
+	20%, 30% {
+		left: -500px; /*2ème image*/
+	}
+	40%, 45% {
+		left: -1000px; /*3ème image*/
+    }
+	60%, 60% {
+	left: -1500px; /*4ème image*/
+	}
+	80%, 75% {
+	left: -2000px; /*5ème image*/
+	}
+}
+
+#slideshowImage {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin:  20px auto;
+	overflow: hidden;
+}
+
+#imageContent li {
+	display: inline;
+}
+
+#imageContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2500px;
+	margin: 0;            
+	padding: 0;
+	
+	/*CSS3 keyframes animation*/
+	animation-name: AutoSlide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+/* CAROUSEL ANIMATION*/
+/* NAMES */
+@keyframes AutoSlide {
+	0%, 15% {
+		left: 0px; /*1ère image*/
+	}
+	20%, 30% {
+		left: -500px; /*2ème image*/
+	}
+	40%, 45% {
+		left: -1000px; /*3ème image*/
+  }
+  60%, 60% {
+		left: -1500px; /*4ème image*/
+  }
+  80%, 75% {
+		left: -2000px; /*5ème image*/
+	}
+}
+
+
+#slideshowTexte {
+	position: relative;
+	width: 500px;
+	height: 100px;
+	margin:  20px auto;
+	overflow: hidden;
+}
+
+#textContent li {
+	display: inline;
+}
+
+#textContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2500px;
+	margin: 0;            
+	padding: 0;
+	
+	/*CSS3 keyframes animation*/
+	animation-name: AutoSlide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
