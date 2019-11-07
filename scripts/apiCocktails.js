@@ -1,6 +1,14 @@
 document.getElementById("selectCocktail").addEventListener("click", callAPI);
 
+// Nettoyage des balises
+function cleanTag(tagName) {
+    let cleanTagTr = document.querySelector(tagName);
+    while (cleanTagTr.firstChild) {
+        cleanTagTr.removeChild(cleanTagTr.firstChild);
+    }
+}
 
+// Récupération des ingrédients d'un cocktail
 function getIngredient(ingredient) {
     if (ingredient) {
 
@@ -16,12 +24,15 @@ function getIngredient(ingredient) {
     }
 }
 
+// Nettoyage des balises
 function cleanTag(tagName) {
     let cleanTagTr = document.querySelector(tagName);
     while (cleanTagTr.firstChild) {
         cleanTagTr.removeChild(cleanTagTr.firstChild);
     }
 }
+
+
 
 function callAPI() {
     let cocktailName = document.querySelector("input").value;
@@ -73,10 +84,6 @@ function callAPI() {
         }
 
         )
-    // .catch((error) => {
-    //     console.log(error.message)
-    // })
-
 }
 
 
@@ -90,6 +97,8 @@ imageCarousel(".image-carousel-3", ".texte-carousel-3");
 imageCarousel(".image-carousel-4", ".texte-carousel-4");
 imageCarousel(".image-carousel-5", ".texte-carousel-5");
 
+
+
 // for (var i = 0; i < 5; i++) {
 function imageCarousel(imageCarousel, texteCarousel) {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
@@ -98,10 +107,13 @@ function imageCarousel(imageCarousel, texteCarousel) {
                 response.json()
                     .then((data) => {
 
+                        let cocktailName = data.drinks[0].strDrink;
                         let image = document.querySelector(imageCarousel);
                         image.src = data.drinks[0].strDrinkThumb;
+                        image.title = cocktailName;
                         let texte = document.querySelector(texteCarousel);
-                        texte.innerHTML = data.drinks[0].strDrink;
+                        texte.innerHTML = cocktailName;
+                        // let attrTitleImage = document.getElementsByTagName('img')[0].getAttribute("title");
 
 
 
@@ -120,5 +132,8 @@ function imageCarousel(imageCarousel, texteCarousel) {
         });
 }
 
+
+
+// document.querySelectorAll("li").addEventListener("click", callAPI2);
 
 
